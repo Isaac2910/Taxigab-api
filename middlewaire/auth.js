@@ -4,7 +4,7 @@ import { Prisma } from '@prisma/client';
 
 
 
-export const isAuthenticated = (  req, res, next   ) =>{
+export const isAuthenticated = (  req, res, next ) =>{
 
     try{
         const authHaeder = req.header.authorization;
