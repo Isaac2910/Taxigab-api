@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken';
 import { Prisma } from '@prisma/client';
 
-
+const prisma = new PrismaClient();
 
 
 export const isAuthenticated = (  req, res, next ) =>{
@@ -44,5 +44,46 @@ export const isAuthenticated = (  req, res, next ) =>{
 
     }
 };
+
+
+
+export const isAuthenticatedDriver = ( req, res, next ) => {
+    try {
+      
+      const authHeader = req.headers.authorization;
+      if (!authHeader) {
+        return res
+          .status(401)
+          .json({ message: "Please Log in to access this content!" });
+      }
+      const token = authHeader.split(" ")[1];
+      if (!token) {
+        return res.status(401).json({ message: "Token missing" });
+      }
+  
+      
+      jwt.verify(
+        token,
+        process.env.ACCESS_TOKEN_SECRET|| '',
+        async (err, decoded) => {
+          if (err) {
+            return res.status(401).json({ message: "Invalid token" });
+          }
+  
+          const driverData = await prisma.driver.findUnique({
+            where: {
+              id: decoded.id,
+            },
+          });
+         
+
+          req.driver = driverData;
+          next();
+        }
+      );
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
 

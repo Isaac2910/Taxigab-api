@@ -17,7 +17,7 @@ import {isAuthenticated} from '../middlewaire/auth.js';
 const userRouter = express.Router ();
 
 
- userRouter.post('/ registre', registerUser);
+ userRouter.post('/registre', registerUser);
  userRouter.post('/verify-otp', verifyOtp);
  userRouter.post("/email-otp-request", sendingOtpToEmail);
  userRouter.put("/email-otp-verify", verifyingEmail);
