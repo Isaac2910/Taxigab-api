@@ -1,0 +1,25 @@
+{
+  "name": "taxigab-api",
+  "version": "1.0.0",
+  "description": "add README",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Isaac2910/Taxigab-api.git"
+  },
+  "author": "Newton10",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Isaac2910/Taxigab-api/issues"
+  },
+  "homepage": "https://github.com/Isaac2910/Taxigab-api#readme",
+  "dependencies": {
+    "@prisma/client": "^5.21.1",
+    "mongodb": "^6.10.0"
+  }
+}
