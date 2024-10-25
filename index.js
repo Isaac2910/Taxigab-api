@@ -4,7 +4,7 @@ import express from "express";
 import { PrismaClient } from '@prisma/client'
 import userRoute from "./routes/UserRoute.js";
 import bodyParser from "body-parser";
-import route from './routes/RiveRoute.js';
+import route from './routes/DriveRoute.js';
 import rideroute from "./routes/RideRoute.js";
 
 
