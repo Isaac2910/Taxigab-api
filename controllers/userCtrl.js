@@ -81,6 +81,20 @@ export const login = async (req, res) => {
 };
 
 //les modifs################################################################################################
+export const getLoggedInUserData = async (req, res) => {
+  try {
+    const user = req.user;
+
+    res.status(201).json({
+      success: true,
+      user,
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+
 
 export const getAllUsers = async (req, res) => {
   try {
