@@ -2,10 +2,9 @@
 import express from "express";
 
 import { PrismaClient } from '@prisma/client'
-import userRoute from "./routes/route.js";
+import userRoute from "./routes/routeuser.js";
 import bodyParser from "body-parser";
-
-
+import route from './routes/routedrive.js';
   
 
 
@@ -31,6 +30,7 @@ async function main() {
 main()
 
 app.use("/api", userRoute);
+app.use("/admin", route)
 
 
 
