@@ -8,6 +8,7 @@ import {
     verifyOtp,
 } from '../controllers/controller.js';
 import {isAuthenticated} from '../middlewaire/auth.js';
+import { orderRide } from '../controllers/rideController.js';
 
 
 
@@ -23,6 +24,7 @@ const userRouter = express.Router ();
  userRouter.put("/email-otp-verify", verifyingEmail);
  userRouter.get("/me", isAuthenticated, getLoggedInUserData);
  userRouter.get("/get-rides", isAuthenticated, getAllRides);
+ userRouter.post("/order", orderRide);
 
 
 

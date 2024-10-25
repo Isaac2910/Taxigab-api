@@ -7,6 +7,7 @@ const app = express()
 const port = 3003 
 
 app.use("/api", userRouter);
+app.use("/api/rides", userRouter);
 
 
 app.listen(port, () => {
