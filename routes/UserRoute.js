@@ -16,8 +16,8 @@ const userRoute = express.Router();
  /*userRouter.post('/verify-otp', verifyOtp);
  userRouter.post("/email-otp-request", sendingOtpToEmail);
  userRouter.put("/email-otp-verify", verifyingEmail);
- userRouter.get("/me", isAuthenticated, getLoggedInUserData);
- userRouter.get("/get-rides", isAuthenticated, getAllRides);*/
+ userRouter.get("/me", isAuthenticated, getLoggedInUserData);*/
+ //userRoute.get("/get-rides", authenticateJWT, getAllRides);
 
 //modif #################################
 

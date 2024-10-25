@@ -1,6 +1,12 @@
 import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
+
+
+
+
+
+
 // Créer un conducteur
 export const createDriver = async (req, res) => {
   const { name, country, phone_number, email, vehicle_type, registration_number, registration_date, driving_license, vehicle_color } = req.body;
