@@ -29,6 +29,9 @@ async function main() {
     }
   }
 main()
+app.get('/', (req, res) => {
+  res.send('Hello 241/')
+})
 
 app.use("/api", userRoute);
 app.use("/admin", route);
